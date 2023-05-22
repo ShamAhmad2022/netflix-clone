@@ -26,6 +26,7 @@ function Home() {
     return (
     <div>    
         <Container>
+            <h1>List of the trending movies:</h1>
             <MovieList allMovies={allMovies}/>
         </Container>
     </div>
