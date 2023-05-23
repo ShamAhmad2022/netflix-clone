@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
-import { Row } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import FavMovie from './FavMovie/FavMovie';
+
+import './favList.css'
 
 
 function FavList() {
@@ -20,10 +22,10 @@ function FavList() {
 
   }
 
-  const updateMoviesAfterDelete = (id) =>{
+  const updateMoviesAfterDelete = (id) => {
     setDataFromDB(dataFromDB.filter(singleMovie => singleMovie.id !== id));
     console.log(id);
-}
+  }
 
   useEffect(() => {
     getData();
@@ -31,12 +33,12 @@ function FavList() {
 
 
   return (
-    <div>
-        <Row>
-          <h1>List of your favorite movies:</h1>
-          {dataFromDB.map(movie => <FavMovie movie={movie} updateMoviesAfterDelete={updateMoviesAfterDelete} setIsUpdated={setIsUpdated}/>)}
-        </Row>
-    </div>
+    <Container>
+      <Row>
+        <h1 className='fav-h1'>List of your favorite movies:</h1>
+        {dataFromDB.map(movie => <FavMovie movie={movie} updateMoviesAfterDelete={updateMoviesAfterDelete} setIsUpdated={setIsUpdated} />)}
+      </Row>
+    </Container>
   )
 }
 
