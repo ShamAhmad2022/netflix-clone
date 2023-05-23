@@ -4,6 +4,8 @@ import Card from 'react-bootstrap/Card';
 import UpdateModal from '../../UpdateModal/UpdateModal';
 import axios from 'axios';
 
+import './FavMovie.css';
+
 function FavMovie({movie, updateMoviesAfterDelete, setIsUpdated}) {
 
     const [signlemovie, setsignlemovie] = useState([]);
@@ -37,7 +39,7 @@ function FavMovie({movie, updateMoviesAfterDelete, setIsUpdated}) {
         <Card.Text>
           {movie.overview}
         </Card.Text>
-        <Button variant="primary" onClick={handeClick}>Edit your comment</Button>
+        <Button variant="primary" onClick={handeClick} className='edit-bottom'>Edit your comment</Button>
         <Button variant="danger" onClick={deleteMovie}>Remove from FAV</Button>
       </Card.Body>
     </Card>
