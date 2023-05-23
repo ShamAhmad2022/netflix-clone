@@ -3,6 +3,8 @@ import MovieList from '../MovieList/MovieList';
 import Container from 'react-bootstrap/Container';
 import axios from 'axios';
 
+import './home.css'
+
 
 function Home() {
 
@@ -26,7 +28,7 @@ function Home() {
     return (
     <div>    
         <Container>
-            <h1>List of the trending movies:</h1>
+            <h1 className='home-h1'>List of the trending movies:</h1>
             <MovieList allMovies={allMovies}/>
         </Container>
     </div>
